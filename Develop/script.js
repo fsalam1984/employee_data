@@ -3,12 +3,30 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // const employeesArray = "";
 // Collect employee data
 const collectEmployees = function() {
-
-
-// return employeesArray;
+   const employeesArray =  [
+    {
+      firstName: "Clarissa",
+      lastName: "Jones",
+      fullName: "Clarissa Jones",
+      salary: 30000
+    },
+    {
+      firstName: "Patrick",
+      lastName: "Hunter",
+      fullName: "Patrick Hunter",
+      salary: 50000
+    },
+    {
+      firstName: "Indiana",
+      lastName: "Hank",
+      fullName: "Indiana Hank",
+      salary: 70000
+    },
+  ]
+return employeesArray;
 }
-
-
+console.log(collectEmployees)
+// console.log(collectEmployees.salary)
 const employeesArray =  [
   {
     firstName: "Clarissa",
@@ -40,8 +58,9 @@ const employeesArray =  [
 
 }
 
-// const objArray = [{a: 1, b: 2}, {a: 4, b: 5}, {a: 8, b: 9}];
-
+// // const objArray = [{a: 1, b: 2}, {a: 4, b: 5}, {a: 8, b: 9}];
+// let result1Salary = collectEmployees.filter(x => x.salary);
+// console.log("All salaries: "+ result1Salary)
 const resultSalary = extractValue(employeesArray, 'salary');
   // console.log(resultSalary);
   let sumSalary = 0;
@@ -146,4 +165,3 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
-// displayEmployees()
