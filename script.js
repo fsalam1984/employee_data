@@ -1,52 +1,70 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
+// document.getElementById("add-employees-btn")
 // const employeesArray = "";
 // Collect employee data
+
+
 const collectEmployees = function() {
-   const employeesArray =  [
-    {
-      firstName: "Clarissa",
-      lastName: "Jones",
-      fullName: "Clarissa Jones",
-      salary: 30000
-    },
-    {
-      firstName: "Patrick",
-      lastName: "Hunter",
-      fullName: "Patrick Hunter",
-      salary: 50000
-    },
-    {
-      firstName: "Indiana",
-      lastName: "Hank",
-      fullName: "Indiana Hank",
-      salary: 70000
-    },
-  ]
-return employeesArray;
+
+//Creating array
+  const employeesArray = [
+];
+
+//Adding prompt and pushing array values
+  let firstName = window.prompt("Please enter the first name data...")
+
+  let lastName = window.prompt("Please enter last name data...")
+
+  let fullName = window.prompt("Please enter full name data...")
+ 
+  let salary = window.prompt("Please enter salary data...")
+ 
+  employeesArray.push(  
+    { firstName: `${firstName}`,
+      lastName:`${lastName}` ,
+      fullName: `${fullName}`,
+      salary: `${salary}`
+  })
+  let addMoreEmployees = window.confirm("Do you want to add more employees?")
+
+  if (employeesArray != null){
+      console.log("this is the Employees array : " + employeesArray)
+  }
+  if (addMoreEmployees === true){
+    let j = "1";
+    const employeesArraynew = [];
+   
+    let countEmployees = window.prompt("Enter number of additional employees...")
+      for(i=0;i<countEmployees;i++) {
+        
+
+          //Adding prompt and pushing array values
+        let firstName = window.prompt("Please enter the first name data.. " )
+        
+        let lastName = window.prompt("Please enter last name data...")
+       
+        let fullName = window.prompt("Please enter full name data...")
+       
+        let salary = window.prompt("Please enter salary data...")
+    
+        //Push
+        
+        employeesArray.push(  
+          { firstName: `${firstName}`,
+            lastName:`${lastName}` ,
+            fullName: `${fullName}`,
+            salary: `${salary}`
+        })
+        console.log("this is the employees array now: " + employeesArray)
+      }
+    }
+ 
+  return employeesArray;
+
+
 }
-console.log(collectEmployees)
-// console.log(collectEmployees.salary)
-const employeesArray =  [
-  {
-    firstName: "Clarissa",
-    lastName: "Jones",
-    fullName: "Clarissa Jones",
-    salary: 30000
-  },
-  {
-    firstName: "Patrick",
-    lastName: "Hunter",
-    fullName: "Patrick Hunter",
-    salary: 50000
-  },
-  {
-    firstName: "Indiana",
-    lastName: "Hank",
-    fullName: "Indiana Hank",
-    salary: 70000
-  },
-]
+
  
   // TODO: Get user input to create and return an array of employee objects
   
@@ -58,47 +76,38 @@ const employeesArray =  [
 
 }
 
-// // const objArray = [{a: 1, b: 2}, {a: 4, b: 5}, {a: 8, b: 9}];
-// let result1Salary = collectEmployees.filter(x => x.salary);
-// console.log("All salaries: "+ result1Salary)
-const resultSalary = extractValue(employeesArray, 'salary');
-  // console.log(resultSalary);
+
+// Display the average salary
+const displayAverageSalary = function(employeesArray) {
+  // passing an array of objects and property 'a' to extract
+  const resultSalary = extractValue(employeesArray, 'salary');
+  //Converting the string to an integer using .map(Number) function
+  const resultSalary1 = resultSalary.map(Number)
   let sumSalary = 0;
-  for(i=0;i<resultSalary.length;i++){
-    sumSalary += resultSalary[i]
+  for(i=0;i<resultSalary1.length;i++){
+    sumSalary += resultSalary1[i]
   }
   console.log("This is the combined salary: " + sumSalary)
-// Display the average salary
-const displayAverageSalary = function() {
-  // passing an array of objects and property 'a' to extract
-  
   averageSalary = sumSalary / resultSalary.length ;
   console.log("This is the average salary" + averageSalary)
   // TODO: Calculate and display the average salary
 }
-displayAverageSalary()
 
-//Get random first & last names
-const resultEmployeeFirstName = extractValue(employeesArray, 'firstName');
-const resultEmployeeLastName = extractValue(employeesArray, 'lastName');
-let resultFirstName = resultEmployeeFirstName[(Math.floor(Math.random() * resultEmployeeFirstName.length))];
-let resultLastName =  resultEmployeeLastName[(Math.floor(Math.random() * resultEmployeeFirstName.length))];
-// console.log("This is my first random First name: " + resultFirstName)
-// console.log("This is my first random Last name:   " + resultLastName)
 
-//Get only random full name
-const resultEmployeeFullName = extractValue(employeesArray, 'fullName');
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
 //This is my random name
+
+//Get only random full name
+  const resultEmployeeFullName = extractValue(employeesArray, 'fullName');
   let resultFullName = resultEmployeeFullName[(Math.floor(Math.random() * resultEmployeeFullName.length))];
 
   console.log("This is my first random name:   " + resultFullName)
   
 }
 
-getRandomEmployee()
+
 
 /*
   ====================
