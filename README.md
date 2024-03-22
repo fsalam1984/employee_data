@@ -17,3 +17,14 @@ WHEN I choose to cancel
 THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
 
 
+
+GitHub Repo link:
+git@github.com:fsalam1984/employee_data.git
+
+GitHub Pages link:
+https://fsalam1984.github.io/employee_data/
+
+
+![image](https://github.com/fsalam1984/employee_data/assets/161408871/11474081-63ef-4a7d-8fbf-5f3e90dfaa71)
+
+
