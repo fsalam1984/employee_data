@@ -89,7 +89,7 @@ const displayAverageSalary = function(employeesArray) {
   }
   console.log("This is the combined salary: " + sumSalary)
   averageSalary = sumSalary / resultSalary.length ;
-  console.log("This is the average salary" + averageSalary)
+  console.log("This is the average salary: " + averageSalary)
   // TODO: Calculate and display the average salary
 }
 
